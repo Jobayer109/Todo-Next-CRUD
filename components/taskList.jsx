@@ -5,12 +5,12 @@ function TaskList() {
   return (
     <main className="flex items-center justify-between border border-black rounded-md my-3 p-3">
       <div>
-        <h2 className="text-xl font-semibold">HTML</h2>
+        <h2 className="text-xl font-bold">HTML</h2>
         <p>A markup language</p>
       </div>
       <div className="flex gap-4">
-        <HiTrash className="text-red-500" />
-        <FaEdit />
+        <HiTrash className="text-red-500" size={24} />
+        <FaEdit size={24} />
       </div>
     </main>
   );
