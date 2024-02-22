@@ -7,7 +7,7 @@ function AddTask() {
     <div className="flex items-center justify-between rounded-md px-4 py-3 bg-slate-800 text-white mt-6">
       <div>
         <Link href="/">
-          <IoHomeSharp className="text-2xl" />
+          <IoHomeSharp className="text-2xl " />
         </Link>
       </div>
       <div className="me-0">

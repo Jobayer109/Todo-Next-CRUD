@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaEdit } from "react-icons/fa";
 import { HiTrash } from "react-icons/hi";
 
@@ -10,7 +11,9 @@ function TaskList() {
       </div>
       <div className="flex gap-4">
         <HiTrash className="text-red-500" size={24} />
-        <FaEdit size={24} />
+        <Link href={`/editTask/@${123}`}>
+          <FaEdit size={24} />
+        </Link>
       </div>
     </main>
   );
