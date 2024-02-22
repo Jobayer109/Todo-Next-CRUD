@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-[40%] m-auto">
+        <div className="max-w-xl m-auto">
           <AddTask />
           {children}
         </div>
