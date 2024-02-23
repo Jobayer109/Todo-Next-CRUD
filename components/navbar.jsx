@@ -2,7 +2,7 @@ import Link from "next/link";
 import { IoHomeSharp } from "react-icons/io5";
 import { TiPlus } from "react-icons/ti";
 
-function AddTask() {
+function Navbar() {
   return (
     <div className="flex items-center justify-between rounded-md px-4 py-3 bg-slate-800 text-white mt-6">
       <div>
@@ -24,4 +24,4 @@ function AddTask() {
   );
 }
 
-export default AddTask;
+export default Navbar;
