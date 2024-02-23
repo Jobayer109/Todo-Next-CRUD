@@ -8,3 +8,16 @@ export async function POST(request) {
   await Topic.create({ title, description });
   return NextResponse.json({ message: "Task created" }, { status: 201 });
 }
+
+export async function GET() {
+  await connectDB();
+  const topics = await Topic.find();
+  return NextResponse.json(topics, { status: 200 });
+}
+
+export async function DELETE(request) {
+  const id = request.nextUrl.searchParams.get("id");
+  await connectDB();
+  await Topic.findByIdAndDelete(id);
+  return NextResponse.json({ message: "Topic Deleted" }, { status: 200 });
+}
