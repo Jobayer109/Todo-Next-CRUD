@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaEdit } from "react-icons/fa";
-import { HiTrash } from "react-icons/hi";
+import RemoveBtn from "./removeBtn";
 
 const getTasks = async () => {
   const res = await fetch("http://localhost:3000/api/topics", {
@@ -28,7 +28,7 @@ const TaskList = async () => {
             <p>{t.description}</p>
           </div>
           <div className="flex gap-4">
-            <HiTrash className="text-red-500" size={24} />
+            <RemoveBtn id={t._id} />
             <Link href={`/editTask/${t._id}`}>
               <FaEdit size={24} />
             </Link>
