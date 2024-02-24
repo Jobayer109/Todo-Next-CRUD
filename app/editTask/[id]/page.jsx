@@ -1,27 +1,27 @@
-function EditTask() {
-  return (
-    <div>
-      <form>
-        <input
-          className="w-full border border-gray-400 px-4 py-3 text-lg mt-3 rounded-md"
-          type="text"
-          name="task"
-          placeholder="Task name"
-        />
-        <input
-          className="w-full border border-gray-400 px-4 py-3 text-lg mt-3 rounded-md"
-          type="text"
-          name="description"
-          placeholder="Description about the task"
-        />
-      </form>
-      <div>
-        <button className="px-3 py-2 text-md bg-green-600 hover:bg-green-700 text-white mt-3 rounded-md ">
-          Update Task
-        </button>
-      </div>
-    </div>
-  );
+import EditTaskForm from "@/components/editTask";
+
+const getTaskById = async (id) => {
+  try {
+    const res = await fetch(`http:localhost:3000/api/topics/${id}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetching");
+    }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+async function EditTask({ params }) {
+  const { id } = params;
+  const task = await getTaskById(id);
+
+  const { title, description } = task.topic;
+  console.log(title, description);
+  return <EditTaskForm id={id} title={title} description={description} />;
 }
 
 export default EditTask;
